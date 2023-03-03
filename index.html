@@ -5,24 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piedra || Papel || Tijera</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <h1>Piedra, Papel o Tijera</h1>
     <h2>PlayerOne vs Computadora</h2>
 
-    <p>PlayerOne: Seleccione una opcion</p>
+    <p>PlayerOne: <span id="spanPlayerOne">Selecciona una opcion</span> </p>
     <button id="piedra">Img Piedra</button>
     <button id="papel">Img Papel</button>
     <button id="tijera">Img Tijera</button>
     <div id="playerOne"></div>
 
 
-    <p>La Computadora selecciona: </p>
-    <div id="computadora"></div>
+    <p>La Computadora: <span id="computadora"></span> </p>
 
     <h2>RESULTADO</h2>
-    <div id="resultado"></div>
+    <p id="resultado">Comencemos!</p>
+
+    <div id="historial"></div>
     
 
     <script src="app.js"></script>

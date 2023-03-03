@@ -11,50 +11,88 @@ let resultado = document.getElementById('resultado')
 //FUNCIONES
 
 let seleccionPlayerOne = 0
-let seleccionComputadora = 2 //despues me preocupo por el Math.random
-console.log("de momento la computadora siempre elije PAPEL")
+let seleccionComputadora = 0 
+let historico = []
+
+//Math.random para la seleccion de la computadora
+//--------------------------------------------------------
+
+seleccionRandom = () =>{
+
+    seleccionComputadora = Math.floor(Math.random()*3)
+
+    switch(seleccionComputadora){
+        case 0: computadora.innerHTML='Piedra'
+        break;
+        case 1: computadora.innerHTML='Papel'
+        break;
+        case 2: computadora.innerHTML='Tijera'
+        break;
+        default: 'ha ocurrido un error!'
+    }
+
+    return seleccionComputadora
+
+}
+
+
+//Seleccion del jugador-----------------------------------
 
 seleccionPiedra = () =>{
-    console.log("Has elegido la Piedra")
-    seleccionPlayerOne = 1
+    seleccionPlayerOne = 0
+    spanPlayerOne.innerHTML = 'Piedra'
+    seleccionRandom()
     jugar()
 }
 
 
 seleccionPapel = () =>{
-    console.log("Has elegido el Papel")
-    seleccionPlayerOne = 2
+    seleccionPlayerOne = 1
+    spanPlayerOne.innerHTML = 'Papel'
+    seleccionRandom()
     jugar()
 }
 
 
 seleccionTijera = () =>{
-    console.log("Has elegido la Tijera")
-    seleccionPlayerOne = 3
+    seleccionPlayerOne = 2
+    spanPlayerOne.innerHTML = 'Tijera'
+    seleccionRandom()
     jugar()
 }
+
+
+// Funcion para que de comienzo al juego (condicionales--------------)
 
 jugar = () =>{
     if(seleccionPlayerOne != seleccionComputadora){
 
-        if (seleccionPlayerOne == 1 && seleccionComputadora == 2){
-            console.log("Computadora GANA!!")
+        if (seleccionPlayerOne == 0 && seleccionComputadora == 1){
+            resultado.innerHTML="Computadora GANA!!"
         }else {
-            if(seleccionPlayerOne == 2 && seleccionComputadora == 1){
-                console.log("Computadora GANA!!")
+            if(seleccionPlayerOne == 1 && seleccionComputadora == 0){
+                resultado.innerHTML="PlayerOne GANA!!"
             }else{
-                if(seleccionPlayerOne == 3 && seleccionComputadora == 1){
-                    console.log('PlayerOne GANA!!')
+                if(seleccionPlayerOne == 2 && seleccionComputadora == 0){
+                    resultado.innerHTML='Computadora GANA!!'
                 }else{
-                    if(seleccionPlayerOne == 3 && seleccionComputadora == 2){
-                        console.log('PlayerOne GANA!!')
+                    if(seleccionPlayerOne == 2 && seleccionComputadora == 1){
+                        resultado.innerHTML='PlayerOne GANA!!'
+                    }else{
+                        if(seleccionPlayerOne == 1 && seleccionComputadora == 2){
+                            resultado.innerHTML="Computadora GANA!!"
+                        }else{
+                            if(seleccionPlayerOne == 0 && seleccionComputadora == 2){
+                                resultado.innerHTML="PlayerOne GANA!!"
+                            }
+                        }
                     }
                 }
             }
         }
 
     } else {
-        console.log("es un EMPATE, vuelve a jugar!")
+        resultado.innerHTML="es un EMPATE, vuelve a jugar!"
     }
 }
 
@@ -68,24 +106,3 @@ papel.addEventListener('click', seleccionPapel)
 tijera.addEventListener('click', seleccionTijera)
 
 
-
-
-
-
-
-
-
-// seleccionPlayerOne = () =>{
-    
-    //     let seleccionPiedra = ''
-    //     seleccionPiedra = piedra.id
-    
-    // console.log(seleccionPiedra)
-    // console.log(`has hecho click en ${seleccionPiedra}`)
-    
-    
-    // }
-    
-    // piedra.addEventListener('click', seleccionPlayerOne)
-    // papel.addEventListener('click', seleccionPlayerOne)
-    // tijera.addEventListener('click', seleccionPlayerOne)
