@@ -94,8 +94,22 @@ jugar = () =>{
     } else {
         resultado.innerHTML="es un EMPATE, vuelve a jugar!"
     }
+
+    decoResultado()
 }
 
+decoResultado = ()=>{
+    if(resultado.innerHTML == 'PlayerOne GANA!!'){
+        document.body.style.backgroundColor = 'green'
+    } else{
+        if (resultado.innerHTML == 'Computadora GANA!!'){
+            document.body.style.backgroundColor = 'red'
+        }else{
+            document.body.style.backgroundColor = 'grey'
+        }
+
+}
+}
 
 
 //EVENTOS
