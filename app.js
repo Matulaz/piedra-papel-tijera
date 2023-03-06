@@ -22,11 +22,14 @@ seleccionRandom = () =>{
     seleccionComputadora = Math.floor(Math.random()*3)
 
     switch(seleccionComputadora){
-        case 0: computadora.innerHTML='Piedra'
+        case 0: computadora.innerHTML='Piedra';
+                btnComputadora.innerHTML = '<button id="piedra" type="button" class="btn btn-primary btn-lg"><img src="./img/piedra.png" alt="La buena Piedra"></button>'
         break;
         case 1: computadora.innerHTML='Papel'
+                btnComputadora.innerHTML = '<button id="papel" type="button" class="btn btn-primary btn-lg"><img src="./img/avion-de-papel.png" alt="Papel"></button>'
         break;
         case 2: computadora.innerHTML='Tijera'
+                btnComputadora.innerHTML = '<button id="tijera" type="button" class="btn btn-primary btn-lg"><img src="./img/tijeras.png" alt="Tijera"></button>'
         break;
         default: 'ha ocurrido un error!'
     }
@@ -97,6 +100,8 @@ jugar = () =>{
 
     decoResultado()
 }
+
+//Target al CSS para empezar a darle color al juego-----------
 
 decoResultado = ()=>{
     if(resultado.innerHTML == 'PlayerOne GANA!!'){
