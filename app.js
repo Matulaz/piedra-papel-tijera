@@ -23,13 +23,13 @@ seleccionRandom = () =>{
 
     switch(seleccionComputadora){
         case 0: computadora.innerHTML='Piedra';
-                computadoraPiedra.innerHTML = '<button id="piedra" type="button" class="btn btn-primary btn-lg"><img src="./img/piedra.png" alt="La buena Piedra"></button>'
+                computadoraPiedra.innerHTML = '<button id="piedra" type="button" class="btn btn-warning btn-lg"><img src="./img/piedra.png" alt="La buena Piedra"></button>'
         break;
         case 1: computadora.innerHTML='Papel'
-                computadoraPapel.innerHTML = '<button id="papel" type="button" class="btn btn-primary btn-lg"><img src="./img/avion-de-papel.png" alt="Papel"></button>'
+                computadoraPapel.innerHTML = '<button id="papel" type="button" class="btn btn-warning btn-lg"><img src="./img/avion-de-papel.png" alt="Papel"></button>'
         break;
         case 2: computadora.innerHTML='Tijera'
-                computadoraTijera.innerHTML = '<button id="tijera" type="button" class="btn btn-primary btn-lg"><img src="./img/tijeras.png" alt="Tijera"></button>'
+                computadoraTijera.innerHTML = '<button id="tijera" type="button" class="btn btn-warning btn-lg"><img src="./img/tijeras.png" alt="Tijera"></button>'
         break;
         default: 'ha ocurrido un error!'
     }
@@ -105,12 +105,12 @@ jugar = () =>{
 
 decoResultado = ()=>{
     if(resultado.innerHTML == 'PlayerOne GANA!!'){
-        document.body.style.backgroundColor = 'green'
+        document.body.style.backgroundColor = '#7DB9B6'
     } else{
         if (resultado.innerHTML == 'Computadora GANA!!'){
-            document.body.style.backgroundColor = 'red'
+            document.body.style.backgroundColor = '#E96479'
         }else{
-            document.body.style.backgroundColor = 'grey'
+            document.body.style.backgroundColor = '#F5E9CF'
         }
 
 }
